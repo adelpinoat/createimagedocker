@@ -10,7 +10,7 @@ name: SprintBoot app
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main","test_eci" ]
     paths:
       - "dockerfiles/**"
       - "workflows/maven.yml"
