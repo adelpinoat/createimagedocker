@@ -1,0 +1,22 @@
+name: comprobaciones bash
+description: comprobamos si los ficheros existen
+runs:
+ using: "composite"
+ steps:
+  - name: 'Check pom.xml exits'
+    run: |
+      if [ ! -f "${GITHUB_WORKSPACE}/pom.xml" ]; then
+      echo "el fichero pom.xml no existe en el espacio de trabajo ${GITHUB_WORKSPACE}"
+      fi
+    shell: bash
+  - name: 'Check test classes'
+    run: |
+      if [ ! -f "${GITHUB_WORKSPACE}/src/test" ]; then
+      echo "no esta creado el directorio de test"
+      fi
+    shell: bash
+  - name: 'limpieza de la ejecucion anterior'
+    run: rm -rf target/
+    shell: bash
+    
+  
