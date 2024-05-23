@@ -1,0 +1,19 @@
+name: buildapp
+description: build de la aplicacion
+runs:
+ using: "composite"
+ steps:
+  - name: maven dependency
+    shell: bash
+    run : mvn dependency:tree 
+    #run : mvn dependency:go-offline 
+  - name: build package
+    shell: bash
+    run: mvn clean package -DskipTests
+  - name: find jar target
+    continue-on-error: true
+    shell: bash
+    run: find . -name '
+    run: |
+        find . -name '*.jar' 
+        fi

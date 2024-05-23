@@ -1,0 +1,8 @@
+name: scannerimage
+description: scanner de las imagen con trivy
+runs:
+ steps:
+  - name: Scan Docker image with Trivy
+    uses: aquasecurity/trivy-action@v0.5.0
+    with:
+      image-ref: appTest:latest
